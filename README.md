@@ -16,6 +16,11 @@ This is simple mod to reposition keys in regular keyboard to achieve wider split
 
 ![mac wrap](https://github.com/santhoshr/ThumbClusters/blob/master/thumbClustersWrapMac.png)
 
+
+## Mac Wrap Alt
+
+![mac wrap alt](https://github.com/santhoshr/ThumbClusters/blob/master/thumbClustersWrapAltMac.png)
+
 ## Win Wrap
 
 ![win wrap](https://github.com/santhoshr/ThumbClusters/blob/master/thumbClustersWrapWin.png)
