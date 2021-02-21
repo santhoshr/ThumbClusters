@@ -17,7 +17,7 @@ ls (tap-hold-next-release 500 spc lsft)
 l2 (tap-hold-next-release 500 tab  (layer-toggle l2))
 df (layer-switch default)
 
-hyp C-A-M-S
+hyp C-A-S-M
 red M-S-z
 pas M-v
 cop M-c
@@ -40,7 +40,7 @@ und M-z
   grv  q    w    e    r    t    _    _    y    u    i    o    p    \     ins  home pgup  
   _    a    s    d    f    g    _    _    h    j    k    l    ;    '     del  end  pgdn  
   @hyp z    x    c    v    b    lalt lalt n    m    ,    .    /                          
-  _    _    lctl @le  @lr  _    _    @lb  @ls  lctl _    _                    up         
+  _    _    _    lctl @lr  @le  _    @lb  @ls  lctl _    _                    up         
   _    _    _              @l2                 _    _    _    _          left down rght  
 )
 
