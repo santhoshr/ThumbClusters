@@ -1,0 +1,74 @@
+(defcfg
+  input  (low-level-hook)
+  output (send-event-sink)
+  )
+
+(defalias
+  def (layer-switch default)
+  nav (layer-toggle nav)
+  num (layer-switch num)
+  sym (layer-switch sym)
+  tnn (tap-next spc (layer-toggle num))
+  mtq (tap-next ret (layer-toggle nav))
+  mtc (tap-next (multi-tap 300 bspc esc) lctl)
+  lb (tap-hold-next-release 500 bspc lsft)
+  le (tap-hold-next-release 500 esc lsft)
+  kil A-f4
+  stp C-c
+  mtn (multi-tap 300 home end)
+  mt (multi-tap 300 bspc esc)
+  min M-down
+  la2 (layer-add num)
+  lr2 (layer-rem num)
+  la3 (layer-add sym)
+  lr3 (layer-rem sym)
+  )
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc 
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]        
+  caps a    s    d    f    g    h    j    k    l    ;    '         ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft        
+  lctl lmet lalt           spc            ralt rmet cmp  rctl       
+  )
+
+(deflayer default
+	  _    _    lmet rsft spc  _    ret  lsft lctl _    _    _    _   
+	  _    /    .    ,    m    n    tab  b    v    c    x    z    tab   bspc
+	  @la2 ;    l    k    j    h    lalt g    f    d    s    a    @nav
+	  _    p    o    i    u    y    _    t    r    e    w    q          -  
+	  @stp 1    2    3    4    5    6    7    8    9    0    -       
+	  _    _    _         @mtq                _    _    _    _              
+	  )
+
+
+(deflayer nav
+	  _    _    _     _    bspc _    _    _    _    _    _    _    _             
+	  _    _    _     _    _    _    _    _    _    _    _    _    _    _             
+	  XX   _    right up   down left _    _    _    _    _    _    esc                
+	  _    _    _     _    _    _    _    _    _    _    _    _         _    
+	  _    _    _     _    _    _    _    _    _    _    _    _    
+	  _    _    _          _                   _    _    _    _    
+	  )
+
+
+(deflayer num
+	  _    _    _    _    _    _    _    _    _    _    _    _    _    
+	  _    \)   \(   *    &    ^    _    %    $    #    @    !    -    _       
+	  @la3 0    9    8    7    6    _    5    4    3    2    1    @lr2
+	  _    _    _    _    _    _    _    _    _    _    _    _         _ 
+	  _    _    _    _    _    _    _    _    _    _    _    _             
+	  _    _    _              _              _    _    _    _            
+	  )
+
+(deflayer sym
+	  _    _    _    _    _    _    _    _    _    _    _    _    _    
+	  _    0    9    8    7    6    _    5    4    3    2    1    -    _       
+	  XX   \)   \(   *    &    ^    _    %    $    #    @    !    @lr3
+	  _    _    _    _    _    _    _    _    _    _    _    _         _ 
+	  _    _    _    _    _    _    _    _    _    _    _    _             
+	  _    _    _              _              _    _    _    _            
+	  )
+
+

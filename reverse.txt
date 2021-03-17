@@ -1,0 +1,1 @@
+New reverse view with faster typing, less keys, it has its own troubles though,the main one, shifting happens inside a mod layer for faster typing resulting in wierd release of base mode key for full shifting or other mod keys inside layer, press thumb mod, press shift mod, release thumb mod, press desired key, otherwise keys dont register particularly right hand side j, k, l

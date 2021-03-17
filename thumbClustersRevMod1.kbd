@@ -1,0 +1,63 @@
+(defcfg
+  input  (low-level-hook)
+  output (send-event-sink)
+  fallthrough false
+  )
+
+(defalias
+  m1 (layer-toggle m1)
+  m2 (layer-toggle m2)
+  md1 (tap-next ret (layer-toggle m1))
+  md2 (tap-next spc (layer-toggle m2))
+  en (tap-next esc (layer-toggle nvr))
+  tn (tap-next tab (layer-toggle nvl))
+  )
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   
+  grv  1    2    3    4    5    6    7    8    9    0    -        
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]        
+  caps a    s    d    f    g    h    j    k    l    ;    '         
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft 
+  )
+
+(deflayer default
+	  _    _    _    _    @md2 _    @md1 
+	  _    /    .    ,    m    n    _    b    v    c    x    z
+	  @tn  ;    l    k    j    h    _    g    f    d    s    a    @en   
+	  f12  p    o    i    u    y    _    t    r    e    w    q         
+	  f11  f10  f9   f8   f7   f6   f5   f4   f3   f2   f1   _                
+	  )
+
+
+(deflayer m1
+	  _    _    _    _    spc  _    _    
+	  _    _    _    _    _    _    _    _    _    _    _    _
+	  _    _    _    _    _    _    _    _    lalt lctl lsft lmet _    
+	  _    _    _    _    _    _    _    _    _    _    _    _         
+	  _    _    _    _    _    _    _    _    _    _    _    _         
+	  )
+
+(deflayer m2
+	  _    _    _     _    _    _    ret  
+	  _    _    _     _    _    _    _    _   _    _    _    _
+	  _    lmet lsft  lctl lalt _    _   _    _    _    _    _    _
+	  _    _    _     _    _    _    _    _   _    _    _    _       
+	  _    _    _     _    _    _    _    _   _    _    _    _       
+	  )
+
+(deflayer nvr
+	  _    _     _     _   bspc _     _      
+	  _    \)    \(    *   &    ^     _   %    $    #    @    ! 
+	  ]    _     right up  down left  _   _    _    _    _    _    _
+	  _    0     9     8   7    6     _   5    4    3    2    1       
+	  _    _    _     _    _    _    _    _   _    _    _    _       
+	  )
+
+(deflayer nvl
+	  _    _     _    _    bspc _    _  
+	  _    \)    \(   *    &    ^    _    %    $    #    @    !
+	  _    _     _    _    _    _    _    _    \    '    =    -    [ 
+	  _    0     9    8    7    6    _    5    4    3    2    1       
+	  _    _    _     _    _    _    _    _   _    _    _    _       
+	  )
