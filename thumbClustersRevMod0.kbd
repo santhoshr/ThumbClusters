@@ -12,6 +12,19 @@
   en (tap-next esc (layer-toggle nvr))
   tn (tap-next tab (layer-toggle nvl))
 
+  m1f6 (tap-hold-next-release 200 ret @m1)
+  m2f4 (tap-hold-next-release 200 spc @m2)
+
+  m_a (tap-hold-next-release 200 a lmet)
+  a_s (tap-hold-next-release 200 s lalt)
+  c_d (tap-hold-next-release 200 d lctl)
+  s_f (tap-hold-next-release 200 f lsft)
+  
+  s_j (tap-hold-next-release 200 j rsft)
+  c_k (tap-hold-next-release 200 k rctl)
+  a_l (tap-hold-next-release 200 l lalt)
+  m_; (tap-hold-next-release 200 ; rmet) 
+
   ck RS-RM-RC-f1
   )
 
@@ -35,7 +48,7 @@
 (deflayer m1
 	  _    _    _    _    spc  _    _    
 	  _    _    _    _    _    _    _    _    _    _    _    _
-	  _    _    _    _    _    _    _    _    lsft lctl lalt lmet _    
+	  _    _    _    _    _    _    _    _    @os_f @c_d @a_s @m_a _    
 	  _    _    _    _    _    _    _    _    _    _    _    _         
 	  _    _    _    _    _    _    _    _    _    _    _    _         
 	  )
@@ -43,7 +56,7 @@
 (deflayer m2
 	  _    _    _     _    _    _    ret  
 	  _    _    _     _    _    _    _    _   _    _    _    _
-	  _    rmet lalt  rctl rsft _    _   _    _    _    _    _    _
+	  _    @m_; @a_l  @c_k @s_j _    _   _    _    _    _    _    _
 	  _    _    _     _    _    _    _    _   _    _    _    _       
 	  _    _    _     _    _    _    _    _   _    _    _    _       
 	  )
@@ -63,3 +76,4 @@
 	  _    0     9    8    7    6    _    5    4    3    2    1       
 	  _    _    _     _    _    _    _    _   _    _    _    _       
 	  )
+o
