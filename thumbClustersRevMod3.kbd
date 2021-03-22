@@ -1,0 +1,76 @@
+(defcfg
+input  (low-level-hook)
+output (send-event-sink 200 50)
+fallthrough false
+)
+
+(defalias
+nv (layer-toggle nv)
+
+rn (layer-toggle rn)
+ln (layer-toggle ln)
+rm (tap-next tab @rn)
+lm (tap-next lalt @ln)
+
+ne (tap-next esc @nv)
+
+fn (layer-toggle fn)
+
+br (tap-next bspc rsft)
+dl (tap-next del lsft)
+)
+
+(defsrc
+esc  f1   f2   f3   f4   f5   f6   f7  
+grv  1    2    3    4    5    6    7    8    9    0    
+tab  q    w    e    r    t    y    u    i    o    p    [    ]     
+caps a    s    d    f    g    h    j    k    l    ;    '    ret       
+lsft z    x    c    v    b    n    m    ,    .    /    rsft       
+lctl lmet lalt           spc
+)
+
+(deflayer default
+_    _    _    _    @rm   _    @ln    lalt 
+_    _    _    _    rctl  spc  @br   @dl  ret  lctl _ 
+_    /    .    ,    m     n    `     b    v    c    x    z    q
+lmet ;    l    k    j     h    '     g    f    d    s    a    @ne 
+_    p    o    i    u     y    _     t    r    e    w    q         
+_    _    _               @fn                   
+)
+
+
+(deflayer nv
+_    _    _    _    _     _     _    _ 
+_    _    _    _    _     _     _    _    _    _    _        
+_    end  pgdn pgup home     _     _    _    _    _    _    _    _
+_    _    rght up   down  left  _    _    _    _    _    _    _
+_    _    _    _    _     _     _    _    _    _    _    _             
+_    _    _               XX                   
+)
+
+(deflayer rn
+_    _    _    _    XX   _    rsft   _
+_    _    _    _    _    _    _    _    _    _    _        
+_    _    _    _    _    _    _    _    _    _    _    _    _
+_    =    -    0    9    8    7    6    5    4    3    2    1
+_    _    _    _    _    _    _    _    _    _    _    _         
+_    _    _               XX                   
+)
+
+(deflayer ln
+_    _    _    _    lsft _    XX   _
+_    _    _    _    _    _    _    _    _    _    _        
+_    _    _    _    _    _    _    _    _    _    _    _    _
+_    =    -    0    9    8    7    6    5    4    3    2    1
+_    _    _    _    _    _    _    _    _    _    _    _         
+_    _    _               XX                   
+)
+
+(deflayer fn
+_    _    _    _    _    _    _    _
+_    _    _    _    _    _    _    _    _    _    _        
+_    _    _    _    _    _    _    _    _    _    _    _    _
+_    f12 f11  f10  f9   f8   f7   f6   f5   f4   f3   f2   f1  
+_    _    _    _    _    _    _    _    _    _    _    _            
+_    _    _              XX                   
+)
