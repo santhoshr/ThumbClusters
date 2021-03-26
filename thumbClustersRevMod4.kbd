@@ -1,0 +1,56 @@
+(defcfg
+input  (low-level-hook)
+output (send-event-sink 500 50)
+fallthrough false
+)
+
+(defalias
+sm1 (tap-hold-next-release 200 ret rsft)
+sm2 (tap-hold-next-release 200 spc lsft)
+m1 (tap-hold-next-release 200 ret (layer-toggle rl))
+m2 (tap-hold-next-release 200 spc (layer-toggle ll))
+sp1 (tap-hold-next-release 200 esc (layer-toggle spl))
+sp2 (tap-hold-next-release 200 bspc (layer-toggle spl))
+stb (tap-hold-next-release 200 S-tab rctl)
+)
+
+(defsrc
+esc  f1   f2   f3   f4   f5   f6   f7   f8  
+grv  1    2    3    4    5    6    7    8    9    0    -    =   bspc
+tab  q    w    e    r    t    y    u    i    o    p    [    ]   \  
+caps a    s    d    f    g    h    j    k    l    ;    '    ret
+lsft z    x    c    v    b    n    m    ,    .    /    
+)
+
+(deflayer default
+_    tab  lalt @stb @m2  lmet @m1  lctl lalt  
+]    /    .    ,    m    n    _    b    v    c    x    z    [   XX
+'    ;    l    k    j    h    _    g    f    d    s    a    _   XX 
+\    p    o    i    u    y    _    t    r    e    w    q    _              
+_    0    9    8    7    6    5    4    3    2    1      
+)
+
+(deflayer ll
+_    _    _    _    XX   _    @sp1 _    _ 
+_    ?    >    <    M    N    _    B    V    C    X    Z   _    XX
+"    :    L    K    J    H    _    G    F    D    S    A   XX   XX 
+|    P    O    I    U    Y    _    T    R    E    W    Q   _                  
+_    \)   \(   *    &    ^    %    $    #    @    !      
+)
+
+(deflayer spl
+_    _    _    _    XX   _    XX   _    _ 
+f12  f11  f10  f9   f8   f7   _    f6   f5   f4   f3   f2   f1   XX                  
+_    _    rght up   down left _    _    end  pgdn pgup home _    _  
+_    =    -    _    _    _    _    _    _    _    _    _    _                  
+_    _    _    _    _    _    _    _    _    _    _      
+)
+
+(deflayer rl
+_    _    _    _    @sp2 _    _    XX   _ 
+`    ?    >    <    M    N    _    B    V    C    X    Z    _    XX
+"    :    L    K    J    H    _    G    F    D    S    A    XX   XX 
+|    P    O    I    U    Y    _    T    R    E    W    Q    _                  
+_    \)   \(   *    &    ^    %    $    #    @    !      
+)
+

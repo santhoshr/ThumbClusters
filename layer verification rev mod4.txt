@@ -1,0 +1,20 @@
+without home row mod yes
+no contraction yes
+mouse closer yes
+alphabets yes
+shifting yes
+space and enter yes
+escape yes
+numbers yes
+symbols yes
+function keys yes
+single and hold windows key yes
+hold control keys yesS
+alt keys yes
+single tilde not yet
+single backslash yes
+brackets yes but flower brackets causing error in manual shifting layer
+navigation keys vim yes with caveats e.g. going into multiple layer, leaver the first layer key
+single tab yes
+key repeat yes
+tab chaning yes
