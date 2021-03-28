@@ -14,8 +14,7 @@ sp2 (tap-hold-next-release 200 bspc (layer-toggle spl))
 stb (tap-hold-next-release 200 S-tab rctl)
  
 def (layer-switch default)
-ch (layer-switch ch)
-qch (tap-hold-next-release 200 (layer-toggle ch) (layer-switch ch))
+qch (tap-hold-next-release 200 (layer-switch ch) (layer-toggle ch))
 
 ct C-w
 nt C-t
