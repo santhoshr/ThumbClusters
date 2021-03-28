@@ -5,11 +5,9 @@ fallthrough false
 )
 
 (defalias
-def (layer-switch default)
-qch (tap-hold-next-release 180 (layer-switch ch) (layer-toggle ch))
 
-l1 (tap-hold-next-release 500 esc  (layer-toggle ch))
-l2 (tap-hold-next-release 500 ret  (layer-toggle ch))
+l1 (tap-hold-next-release 500 esc  (layer-toggle l1))
+l2 (tap-hold-next-release 500 ret  (layer-toggle l2))
 
 hyp C-A-S-M
 red C-S-z
@@ -39,15 +37,23 @@ lsft z    x    c    v    b    n    m    ,    .    /
 (deflayer default
 esc  tab  bspc spc  @l2  @l1  lsft lctl lalt 
 ]    /    .    ,    m    n    _    b    v    c    x    z    [    XX
-'    ;    l    k    j    h    @qch g    f    d    s    a    lmet XX 
+'    ;    l    k    j    h    _    g    f    d    s    a    lmet XX 
 \    p    o    i    u    y    _    t    r    e    w    q    grv              
 _    0    9    8    7    6    5    4    3    2    1      
 )
 
-(deflayer ch
+(deflayer l1
 _    _    _    _    _    _    _    _    _   
-_    @ca  @pa  @ppa _    bspc @def del  @pas @cop @cut @und  @sa  _
-_    @ca  rght up   down left XX   ins  end  pgdn pgup home _    _ 
+_    @ca  @pa  @ppa _    bspc _    del  @pas @cop @cut @und @sa  _
+_    @ca  rght up   down left _    ins  end  pgdn pgup home _    _ 
+_    f12  f11  f10  f9   f8   f7   f6   f5   f4   f3   f2   f1                  
+_    _    _    _    _    _    _    _    _    _    _      
+)
+
+(deflayer l2
+_    _    _    _    _    _    _    _    _   
+_    @ca  @pa  @ppa _    bspc _    del  @pas @cop @cut @und @sa  _
+_    @ca  rght up   down left _    ins  end  pgdn pgup home _    _ 
 _    _    @cpu @cpd @nt  @ct  _    _    _    _    _    _    _                  
 _    _    _    _    _    _    _    _    _    _    _      
 )
