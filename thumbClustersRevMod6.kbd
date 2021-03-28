@@ -5,29 +5,27 @@ fallthrough false
 )
 
 (defalias
-sm1 (tap-hold-next-release 180 ret rsft)
-sm2 (tap-hold-next-release 180 spc lsft)
-m1 (tap-hold-next-release 180 ret (layer-toggle rl))
-m2 (tap-hold-next-release 180 spc (layer-toggle ll))
-sp1 (tap-hold-next-release 180 esc (layer-toggle spl))
-sp2 (tap-hold-next-release 180 bspc (layer-toggle spl))
-stb (tap-hold-next-release 180 S-tab rctl)
- 
-qdf (tap-hold-next-release 180 (layer-switch default) (layer-toggle typ))
+def (layer-switch default)
 qch (tap-hold-next-release 180 (layer-switch ch) (layer-toggle ch))
 
-ct C-w
-nt C-t
-pw A-tab
-ppw A-S-tab
-cl A-f4
-un C-z
-ca C-a
-cc C-c
-cv C-v
-cu C-x
+l1 (tap-hold-next-release 500 esc  (layer-toggle ch))
+l2 (tap-hold-next-release 500 ret  (layer-toggle ch))
+
+hyp C-A-S-M
+red C-S-z
+pas C-v
+cop C-c
+cut C-x
+und C-z
+
+nt  C-t
+ct  C-w
 cpu C-pgup
 cpd C-pgdn
+pa  A-tab
+ppa S-A-tab
+ca  A-f4
+sa  C-a
 )
 
 (defsrc
@@ -39,50 +37,17 @@ lsft z    x    c    v    b    n    m    ,    .    /
 )
 
 (deflayer default
-esc  tab  lalt spc  ret  lmet lsft lctl lctl 
-]    /    .    ,    m    n    @qdf b    v    c    x    z    [   XX
-'    ;    l    k    j    h    @qch g    f    d    s    a    _   XX 
-\    p    o    i    u    y    _    t    r    e    w    q    _              
-_    0    9    8    7    6    5    4    3    2    1      
-)
-
-(deflayer typ
-esc  tab  lalt esc  @m2  lmet @m1  lctl lsft 
-]    /    .    ,    m    n    XX   b    v    c    x    z    [   XX
-'    ;    l    k    j    h    @qch g    f    d    s    a    _   XX 
-\    p    o    i    u    y    _    t    r    e    w    q    _              
+esc  tab  bspc spc  @l2  @l1  lsft lctl lalt 
+]    /    .    ,    m    n    _    b    v    c    x    z    [    XX
+'    ;    l    k    j    h    @qch g    f    d    s    a    lmet XX 
+\    p    o    i    u    y    _    t    r    e    w    q    grv              
 _    0    9    8    7    6    5    4    3    2    1      
 )
 
 (deflayer ch
-esc  tab  lalt esc  spc  lmet ret  lctl lsft    
-rsft @cl  @pw  @ppw @pw  bspc @qdf del  @cv  @cc  @cu  @un  lsft _
+_    _    _    _    _    _    _    _    _   
+_    @ca  @pa  @ppa _    bspc @def del  @pas @cop @cut @und  @sa  _
 _    @ca  rght up   down left XX   ins  end  pgdn pgup home _    _ 
 _    _    @cpu @cpd @nt  @ct  _    _    _    _    _    _    _                  
 _    _    _    _    _    _    _    _    _    _    _      
 )
-
-(deflayer ll
-_    _    _    _    _    _    @sp1 _    _    
-_    ?    >    <    M    N    _    B    V    C    X    Z   _    XX
-"    :    L    K    J    H    _    G    F    D    S    A   XX   XX 
-|    P    O    I    U    Y    _    T    R    E    W    Q   _                  
-_    \)   \(   *    &    ^    %    $    #    @    !      
-)
-
-(deflayer spl
-_    _    _    _    _    _    _    _    _    
-f11  f10  f9   f8   f7   f6   @pw  f5   f4   f3   f2   f1   f12  XX                  
-_    _    rght up   down left _    ins  end  pgdn pgup home _    _  
-_    =    -    +    \_   _    _    _    _    _    _    _    _                      
-_    _    _    _    _    _    _    _    _    _    _      
-)
-
-(deflayer rl
-_    _    _    _    @sp2 _    _    _    _    
-`    ?    >    <    M    N    _    B    V    C    X    Z    _    XX
-"    :    L    K    J    H    _    G    F    D    S    A    XX   XX 
-|    P    O    I    U    Y    _    T    R    E    W    Q    _                  
-_    \)   \(   *    &    ^    %    $    #    @    !      
-)
-

@@ -14,8 +14,8 @@ le (tap-hold 200 esc lctl)
 lb (tap-hold-next-release 500 bspc lctl)
 lr (tap-hold-next-release 500 ret lsft)
 ls (tap-hold-next-release 500 spc lsft)
-l2 (tap-hold-next-release 500 esc  (layer-toggle l2))
-l3 (tap-hold-next-release 500 ret  (layer-toggle l3))
+l1 (tap-hold-next-release 500 esc  (layer-toggle l1))
+l2 (tap-hold-next-release 500 ret  (layer-toggle l2))
 df (layer-switch default)
 
 hyp C-A-S-M
@@ -57,7 +57,7 @@ sa  C-a
 (deflayer l1
   _    _    _    _    _    _    _    _    _    _    _    _     _         _    _    
   1    2    3    4    5    6    _    _    7    8    9    0     -    =    _    _    _     
-  _    home pgdn pgup end  _    _    _    left down up   rght  _    [    ]    _    _         
+  _    home pgdn pgup end  ins  _    _    left down up   rght  _    [    ]    _    _         
   @sa  @und @cut @cop @pas del  _    _    bspc _    @ppa @pa   @ca                           
   _    _    _    _    _    _    _    _    _    _    _    _                    _          
   _    _    _              _                   _    _    _     _         _    _    _     
@@ -66,7 +66,7 @@ sa  C-a
 (deflayer l2
   _    _    _    _    _    _    _    _    _    _    _    _     _         _    _    
   _    _    _    _    _    _    _    _    @ct  @nt  @cpd @cpu  _    _    _    _    _     
-  _    home pgdn pgup end  _    _    _    left down up   rght  _    _    _    _    _     
+  _    home pgdn pgup end  ins  _    _    left down up   rght  _    _    _    _    _     
   @sa  @und @cut @cop @pas del  _    _    bspc _    @ppa @pa   @ca                        
   _    _    _    _    _    _    _    _    _    _    _    _                    _          
   _    _    _              _                   _    _    _     _         _    _    _     
