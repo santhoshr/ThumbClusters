@@ -1,20 +1,20 @@
 (defcfg
 input  (low-level-hook)
-output (send-event-sink 500 200)
+output (send-event-sink 300 50)
 fallthrough false
 )
 
 (defalias
-sm1 (tap-hold-next-release 200 ret rsft)
-sm2 (tap-hold-next-release 200 spc lsft)
-m1 (tap-hold-next-release 200 ret (layer-toggle rl))
-m2 (tap-hold-next-release 200 spc (layer-toggle ll))
-sp1 (tap-hold-next-release 200 esc (layer-toggle spl))
-sp2 (tap-hold-next-release 200 bspc (layer-toggle spl))
-stb (tap-hold-next-release 200 S-tab rctl)
+sm1 (tap-hold-next-release 180 ret rsft)
+sm2 (tap-hold-next-release 180 spc lsft)
+m1 (tap-hold-next-release 180 ret (layer-toggle rl))
+m2 (tap-hold-next-release 180 spc (layer-toggle ll))
+sp1 (tap-hold-next-release 180 esc (layer-toggle spl))
+sp2 (tap-hold-next-release 180 bspc (layer-toggle spl))
+stb (tap-hold-next-release 180 S-tab rctl)
  
-def (layer-switch default)
-qch (tap-hold-next-release 200 (layer-switch ch) (layer-toggle ch))
+qdf (tap-hold-next-release 180 (layer-switch default) (layer-toggle typ))
+qch (tap-hold-next-release 180 (layer-switch ch) (layer-toggle ch))
 
 ct C-w
 nt C-t
@@ -40,15 +40,23 @@ lsft z    x    c    v    b    n    m    ,    .    /
 
 (deflayer default
 esc  tab  lalt @stb @m2  lmet @m1  lctl lalt 
-]    /    .    ,    m    n    @def b    v    c    x    z    [   XX
+]    /    .    ,    m    n    @qdf b    v    c    x    z    [   XX
+'    ;    l    k    j    h    @qch g    f    d    s    a    _   XX 
+\    p    o    i    u    y    _    t    r    e    w    q    _              
+_    0    9    8    7    6    5    4    3    2    1      
+)
+
+(deflayer typ
+esc  tab  lalt @stb @m2  lmet @m1  lctl lalt 
+]    /    .    ,    m    n    XX   b    v    c    x    z    [   XX
 '    ;    l    k    j    h    @qch g    f    d    s    a    _   XX 
 \    p    o    i    u    y    _    t    r    e    w    q    _              
 _    0    9    8    7    6    5    4    3    2    1      
 )
 
 (deflayer ch
-esc  tab  lalt lctl spc  lmet ret  lctl lalt    
-rsft @cl  @pw  @ppw @pw  bspc @def del  @cv  @cc  @cu  @un  lsft _
+esc  tab  lalt lctl spc  lmet ret  lctl lalt 
+rsft @cl  @pw  @ppw @pw  bspc @qdf del  @cv  @cc  @cu  @un  lsft _
 _    @ca  rght up   down left XX   ins  end  pgdn pgup home _    _ 
 _    _    @cpu @cpd @nt  @ct  _    _    _    _    _    _    _                  
 _    _    _    _    _    _    _    _    _    _    _      
